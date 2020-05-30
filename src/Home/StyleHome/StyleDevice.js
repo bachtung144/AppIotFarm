@@ -1,0 +1,47 @@
+export const styleDevice = {
+  ctnImage: {alignItems: 'center', justifyContent: 'center', marginTop: 28},
+  ctnSetting: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 18.45,
+  },
+  ctnSwitch: {
+    backgroundColor: '#94D213',
+    borderRadius: 15,
+    width: 62,
+    height: 32,
+    marginRight: 50,
+  },
+  ctnSwitch2: {
+    backgroundColor: '#FFF',
+    borderWidth: 0.5,
+    borderRadius: 15,
+    width: 28,
+    height: 32,
+    left: 34,
+  },
+  iconSetting: {fontSize: 32, color: '#707378'},
+  ctnStatus: {marginTop: 29, marginLeft: 24, marginRight: 20},
+  flexRow: {flexDirection: 'row'},
+  iconStatus: {color: '#008F33', fontSize: 18, marginTop: 3},
+  ctnStatusLeft: {flexDirection: 'row', flex: 1},
+  txtStatus: {
+    fontSize: 18,
+    marginLeft: 12.8,
+    fontWeight: 'bold',
+    fontFamily: 'Roboto',
+  },
+  txtStatusRight: {
+    color: '#A9A9A9',
+    fontFamily: 'Roboto',
+    fontSize: 14,
+    marginTop: 3,
+  },
+  line: {
+    backgroundColor: '#B2BDCD',
+    width: '100%',
+    height: 0.5,
+    marginVertical: 9.5,
+  },
+  iconRight: {fontSize: 14, color: '#A9A9A9', marginTop: 6, marginLeft: 10},
+};
