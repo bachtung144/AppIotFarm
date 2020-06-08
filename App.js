@@ -6,12 +6,12 @@ import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import Chart from './src/Home/Chart';
+import Chart from './src/Chart/Chart';
 import {IconCustom} from './IconCustom';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Feather from 'react-native-vector-icons/Feather';
-import News from './src/Home/News';
-import User from './src/Home/User';
+import News from './src/News/News';
+import User from './src/User/User';
 import Test from './src/Home/Test';
 import Setting from './src/Home/Setting/Setting';
 import NavigationService from './NavigationService';
@@ -19,6 +19,7 @@ import RadiusSetting from './src/Home/Setting/RadiusSetting';
 import ConfigFeed from './src/Home/Setting/ConfigFeed';
 import PickConfig from './src/Home/Setting/PickConfig';
 import SpeedFeed from './src/Home/Setting/SpeedFeed';
+import ConfigFeedOne from './src/Home/Setting/ConfigFeedOne';
 
 const getTabBarIcon = (navigation, focused, tintColor) => {
   const {routeName} = navigation.state;
@@ -36,7 +37,8 @@ const SettingStack = createStackNavigator({
     RadiusScreen:{screen:RadiusSetting,navigationOptions:{headerShown:false}},
     ConfigFeedScreen:{screen:ConfigFeed,navigationOptions:{headerShown:false}},
     PickConfigScreen:{screen:PickConfig,navigationOptions:{headerShown:false}},
-    SpeedFeedScreen : {screen:SpeedFeed,navigationOptions:{headerShown:false}}
+    SpeedFeedScreen : {screen:SpeedFeed,navigationOptions:{headerShown:false}},
+    ConfigFeedOneScreen:{screen:ConfigFeedOne,navigationOptions:{headerShown:false}}
 });
 
 const TabNavigator = createBottomTabNavigator(

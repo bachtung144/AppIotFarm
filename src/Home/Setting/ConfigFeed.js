@@ -80,6 +80,8 @@ const ConfigFeed = React.memo(function ConfigFeed({navigation}) {
                                         nameIcon={'timeline'}
                                         nameStatus={'Thời gian kết thúc'}
                                         detailStatus={'12:00'}
+                                        onPress={
+                                            () => navigation.navigate('ConfigFeedOneScreen')}
                                     />
                                 : null
                         }

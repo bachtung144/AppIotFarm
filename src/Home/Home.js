@@ -9,6 +9,7 @@ import Device from './Device';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
 import {createAppContainer} from 'react-navigation';
 import HeaderHome from './ComponentHome/HeaderHome';
+import CustomTabBar from './CustomTabBar';
 
 const Home = React.memo( function Home() {
   const [TopTabDevice, useTopTabDevice] = useState(null);
@@ -17,12 +18,12 @@ const Home = React.memo( function Home() {
   useEffect(() => {
     const tabNavigator = createMaterialTopTabNavigator(
       {
-        dv1: {screen: Device},
+        dv1: {screen: Device,navigationOptions:{title:'hello'}},
         dv2: {screen: Device},
         dv3: {screen: Device},
       },
       {
-          // tabBarComponent: TabBar,
+          tabBarComponent: props => <CustomTabBar {...props}/>
       },
     );
     const term = () => createAppContainer(tabNavigator);

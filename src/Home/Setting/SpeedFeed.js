@@ -6,6 +6,7 @@ import {
 } from "react-native-wheel-picker-android";
 import Feather from 'react-native-vector-icons/Feather';
 import StatusBoth from './ComponentSetting/StatusBoth';
+import StatusNotRight from './ComponentSetting/StatusNotRight';
 const screenWidth = Dimensions.get('window').width;
 const wheelPickerData1 = [
     '0','1','2','3','4','5','6','7','8','9'
@@ -43,13 +44,12 @@ const SpeedFeed = React.memo(function SpeedFeed({navigation}) {
                 shadowOpacity: 0.39,
                 shadowRadius: 8.3,
                 elevation: 13,
-
             }}>
                     <View style={{
                         flexDirection:'row',marginLeft:24,marginRight:24,marginTop:50}}>
                         <WheelPicker
                         data={wheelPickerData1}
-                        style={{width:(screenWidth-48)/3,height: 250}}
+                        style={{width:(screenWidth-48)/3,height: 170}}
                         indicatorWidth={0.5}
                         selectedItemTextSize={20}
                         selectedItemTextColor={'black'}
@@ -58,7 +58,7 @@ const SpeedFeed = React.memo(function SpeedFeed({navigation}) {
                         />
                         <WheelPicker
                             data={wheelPickerData2}
-                            style={{width:(screenWidth-48)/3,height: 250}}
+                            style={{width:(screenWidth-48)/3,height: 170}}
                             indicatorWidth={0.5}
                             selectedItemTextSize={20}
                             selectedItemTextColor={'black'}
@@ -66,18 +66,32 @@ const SpeedFeed = React.memo(function SpeedFeed({navigation}) {
                             itemTextSize={16}/>
                         <WheelPicker
                             data={wheelPickerData3}
-                            style={{width:(screenWidth-48)/3,height: 250}}
+                            style={{width:(screenWidth-48)/3,height: 170}}
                             indicatorWidth={0.5}
                             selectedItemTextSize={20}
                             selectedItemTextColor={'black'}
                             itemTextColor={'white'}
                             itemTextSize={10}/>
                     </View>
-                <StatusBoth
-                    nameIcon={'size'}
-                    nameStatus={'Cỡ thức ăn'}
-                    detailStatus={4}
-                />
+                <View style={{marginHorizontal:24}}>
+                    <StatusBoth
+                        nameIcon={'alarm'}
+                        nameStatus={'Thời gian cho ăn 1 lượt'}
+                        detailStatus={'20 giây'}
+                    />
+                    <View style={{backgroundColor: '#B2BDCD',
+                        width: '100%',
+                        height: 0.5,marginBottom:12}} />
+                    <StatusNotRight nameStatus={'Thời gian nghỉ'} nameIcon={'timeline'}
+                    detailStatus={'120 giây'}/>
+                </View>
+                <View style={{backgroundColor:'#f4f6fb',height: '100%',marginTop:12,alignItems:'center'}}>
+                    <Text style={{marginTop:6
+                    ,color:'#022754',fontSize:14,fontFamily:'Roboto'
+                    }}>Thời gian nghỉ giữa 2 lượt phụ thuộc vào tốc độ</Text>
+                    <Text style={{color:'#022754',fontSize:14,
+                        fontFamily:'Roboto'}}>cho ăn và thời gian cho ăn 1 lượt</Text>
+                </View>
             </View>
         </View>
     )
