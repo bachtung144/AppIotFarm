@@ -8,14 +8,30 @@ export default class CustomTabBarIcon extends React.PureComponent {
 
     render() {
 
-        const {index, focused, routeName} = this.props;
+        const {index, focused, routeName,routes} = this.props;
 
         return (
             <View
                 onPress={() => this.onSelect(routeName)}
+                style={{borderRadius:80}}
             >
-                <View style={[styles.container, focused ? styles.active : styles.inactive]}>
-                    <Text style={styles.textStyle}>{routeName}</Text>
+                {/*<View style={[styles.container, focused ? styles.active : styles.inactive,*/}
+                {/*    index === 0 && !focused ? {backgroundColor:'red'} : null*/}
+                {/*]}>*/}
+                {/*    <Text style={styles.textStyle}>{routeName}</Text>*/}
+                {/*</View>*/}
+                <View style={{height: '100%',width: 100,alignItems:'center',
+                justifyContent: 'center',
+                    borderTopLeftRadius:index === 0 ? 80 : 0,
+                    borderBottomLeftRadius:index === 0 ? 80 : 0,
+                    borderTopRightRadius:index === (routes.length-1) ? 80 : 0,
+                    borderBottomRightRadius:index === (routes.length-1) ? 80 : 0,
+                    backgroundColor: focused ? '#47AA12' :'#EDF1F8'
+                }}>
+                    <Text style={{
+                        color: focused ? '#FFF':'#A9A9A9',
+                        fontSize: 14}}>
+                        {routeName}</Text>
                 </View>
             </View>
         );
@@ -25,21 +41,26 @@ export default class CustomTabBarIcon extends React.PureComponent {
 const styles = StyleSheet.create({
 
     container: {
-        flex: 1,
-        alignItems: 'center'
+        width:100,
+        height:'100%',
+        alignItems:'center',
+        justifyContent:'center'
     },
     active: {
         borderTopWidth: 3,
         borderColor: 'white',
-        backgroundColor:'blue'
+        backgroundColor:'#47AA12',
+        borderRadius:80
+
     },
     inactive: {
         borderTopWidth: 3,
         borderColor: 'blue',
-        backgroundColor:'red'
+        backgroundColor:'#EDF1F8',
+
     },
     textStyle: {
-        color: 'red',
-        fontSize: 13
+        color: '#A9A9A9',
+        fontSize: 14
     }
 });

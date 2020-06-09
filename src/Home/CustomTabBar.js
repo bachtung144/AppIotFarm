@@ -2,9 +2,6 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 import React from 'react';
 import {
-    ActivityIndicator,
-    StatusBar,
-    ScrollView,
     View,
     StyleSheet
 } from 'react-native';
@@ -21,43 +18,29 @@ export default class CustomTabBar extends React.Component {
         const routes = navigation.state.routes;
         // console.warn(navigation.state.routes);
         return(
-            <SafeAreaView style={{backgroundColor: 'blue'}}>
-                <View style={styles.container}>
+            <SafeAreaView style={{flexDirection:'row',marginRight:24,marginLeft:24,
+                height:36}}>
                     {routes.map((route, index) =>{
                         return (
-                            <View style={styles.tabBarItem}>
+                            // <View style={{flexDirection:'row',flex:1,borderRadius:10,backgroundColor:'pink',
+                            // height:'100%'}}>
                                 <CustomTabBarIcon
                                     key={route.key}
                                     routeName={route.routeName}
                                     onPress={() => this.navigationHandler(index)}
                                     focused={navigation.state.index === index}
                                     index={index}
+                                    routes={routes}
                                 />
-                            </View>
+                            // </View>
                         )
                     })}
-                </View>
             </SafeAreaView>
         )
 
     }
 }
 
-const styles = StyleSheet.create({
-
-    container: {
-        // flexDirection: 'row',
-        // alignContent: 'center',
-        // height: 56,
-        // width: '100%',
-        // paddingHorizontal: 16,
-        backgroundColor: 'pink',
-    },
-    tabBarItem: {
-        flex: 1,
-        alignItems: 'center'
-    }
-});
 
 
 
